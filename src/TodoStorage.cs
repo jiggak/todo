@@ -1,5 +1,4 @@
 using Microsoft.Data.Entity;
-using Microsoft.Data.Entity.Metadata;
 
 namespace TodoApp
 {
