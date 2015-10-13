@@ -15,4 +15,6 @@
    todo.app.commands.new = function(msg) {
       createTodo(this, msg);
    };
+
+   todo.app.commands.new.usage = 'Create todo with message';
 })();

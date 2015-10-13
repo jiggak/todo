@@ -11,4 +11,6 @@
    todo.app.commands.rm = function(id) {
       removeTodo(this, id);
    };
+
+   todo.app.commands.rm.usage = 'Remove todo with the ID';
 })();

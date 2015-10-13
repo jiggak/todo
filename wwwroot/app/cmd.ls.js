@@ -14,4 +14,6 @@
    todo.app.commands.ls = function() {
       listTodos(this);
    };
+
+   todo.app.commands.ls.usage = 'List todos';
 })();
