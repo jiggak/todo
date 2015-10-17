@@ -21,7 +21,7 @@ namespace TodoApp
       
       public void Configure(IApplicationBuilder app)
       {
-         app.UseErrorPage();
+         app.UseDeveloperExceptionPage();
          
          //app.UseStatusCodePages();
          app.UseFileServer();
