@@ -5,6 +5,6 @@ var todo = {
 $(document).ready(function () {
    $('body').terminal(todo.app.commands, {
    	prompt: 'todo> ',
-   	greetings: null
+   	greetings: $("#greeting").text()
    });
 });
