@@ -1,5 +1,5 @@
 (function() {
-   var todoLine = _.template('<%= id %> | <%= created %> | <%= message %>');
+   var todoLine = _.template('<%= id %> | <%= moment(created).format("llll") %> | <%= message %>');
 
    var listTodos = function(term) {
       $.ajax('/api/todo').done(function(result) {
