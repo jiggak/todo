@@ -1,7 +1,6 @@
-using System.Linq;
 using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.Framework.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 
 namespace TodoApp
@@ -18,14 +17,17 @@ namespace TodoApp
 
          services.AddEntityFramework().AddNpgsql();
       }
-      
-      public void Configure(IApplicationBuilder app)
+
+      public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
       {
+         //loggerFactory.AddConsole();
+
          app.UseDeveloperExceptionPage();
-         
-         //app.UseStatusCodePages();
+
+         app.UseStatusCodePages();
+
          app.UseFileServer();
-         
+
          app.UseMvc();
       }
    }
