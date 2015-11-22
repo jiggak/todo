@@ -14,7 +14,9 @@ namespace TodoApp
       {
          using (var db = new TodoStorage())
          {
-            return db.Todos.ToList();
+            return db.Todos
+               .OrderByDescending(t => t.Created)
+               .ToList();
          }
       }
       

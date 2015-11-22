@@ -1,7 +1,7 @@
 (function() {
-	var pad = function(s, len) {
-		return (s + ' '.repeat(len)).slice(0, len);
-	};
+   var pad = function(s, len) {
+      return (s + ' '.repeat(len)).slice(0, len);
+   };
 
    var printHelp = function(term) {
       _.each(todo.app.commands, function(func, cmd) {
@@ -9,7 +9,7 @@
       });
    };
 
-   todo.app.commands.help = function() {
+   todo.app.commands.help = function(cmd) {
       printHelp(this);
    };
 
