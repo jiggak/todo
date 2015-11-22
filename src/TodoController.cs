@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.AspNet.Mvc;
 
@@ -32,18 +33,18 @@ namespace TodoApp
       }
       
       [HttpPost]
-      public Todo Create([FromBody] Todo todo)
+      async public Task<Todo> Create([FromBody] Todo todo)
       {
          using (var db = new TodoStorage())
          {
             db.Todos.Add(todo);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return todo;
          }
       }
       
       [HttpDelete("{id:int}")]
-      public IActionResult Delete(int id)
+      async public Task<IActionResult> Delete(int id)
       {
          using (var db = new TodoStorage())
          {
@@ -53,7 +54,7 @@ namespace TodoApp
                return HttpNotFound();
                
             db.Todos.Remove(todo);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
          }
          
          return new NoContentResult();
