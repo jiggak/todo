@@ -16,6 +16,7 @@ namespace TodoApp
          });
 
          services.AddEntityFramework().AddNpgsql();
+         //services.AddEntityFramework().AddSqlite();
       }
 
       public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
