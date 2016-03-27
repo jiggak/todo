@@ -15,8 +15,8 @@ namespace TodoApp
                   new CamelCasePropertyNamesContractResolver();
          });
 
-         services.AddEntityFramework().AddNpgsql();
-         //services.AddEntityFramework().AddSqlite();
+         //services.AddEntityFramework().AddNpgsql();
+         services.AddEntityFramework().AddSqlite();
       }
 
       public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
