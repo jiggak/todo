@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TodoApp
 {
@@ -28,7 +28,7 @@ namespace TodoApp
             var todo = db.Todos.FirstOrDefault(t => t.Id == id);
             
             if (todo == null)
-               return HttpNotFound();
+               return NotFound();
             
             return new ObjectResult(todo);
          }
@@ -53,7 +53,7 @@ namespace TodoApp
             var todo = db.Todos.FirstOrDefault(t => t.Id == id);
             
             if (todo == null)
-               return HttpNotFound();
+               return NotFound();
                
             db.Todos.Remove(todo);
             await db.SaveChangesAsync();
