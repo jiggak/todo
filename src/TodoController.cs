@@ -35,6 +35,7 @@ namespace TodoApp
       }
       
       [HttpPost]
+      [ValidModel]
       async public Task<Todo> Create([FromBody] Todo todo)
       {
          using (var db = new TodoStorage())
