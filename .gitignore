@@ -1,4 +1,7 @@
-.vscode
-project.lock.json
+.vscode/
 bin/
 obj/
+node_modules/
+typings/
+wwwroot/
+project.lock.json
