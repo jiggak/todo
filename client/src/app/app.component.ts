@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from './todo.service';
+import { Observable } from 'rxjs';
+import { Todo } from './todo';
 
 @Component({
    selector: 'todo-app',
@@ -7,7 +9,7 @@ import { TodoService } from './todo.service';
    providers: [TodoService]
 })
 export class AppComponent implements OnInit {
-   todos$;
+   todos$: Observable<Todo[]>;
 
    constructor(private todoService: TodoService) { }
 

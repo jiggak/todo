@@ -7,7 +7,7 @@ import { Todo } from './todo';
 export class TodoService {
    constructor(private http:Http) { }
 
-   list(): Observable<Todo> {
+   list(): Observable<Todo[]> {
       return this.http.get('/api/todo')
          .map(res => res.json());
    }
