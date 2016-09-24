@@ -1,3 +1,10 @@
 <div *ngFor="let todo of todos$ | async">
-   {{todo.created}} {{todo.message}}
+   <span>{{todo.created}}</span>
+   <span>{{todo.message}}</span>
+   <button (click)="delete(todo.id)">X</button>
+</div>
+
+<div>
+   <input #todoMessage type="text" placeholder="Is there something you need to do?">
+   <button (click)="save(todoMessage.value)">Save</button>
 </div>

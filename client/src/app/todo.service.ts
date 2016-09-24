@@ -11,4 +11,15 @@ export class TodoService {
       return this.http.get('/api/todo')
          .map(res => res.json());
    }
+
+   create(todo: Todo): Promise<any> {
+      console.log(todo);
+      return this.http.post('/api/todo', todo)
+         .toPromise();
+   }
+
+   delete(id: number): Promise<any> {
+      return this.http.delete(`/api/todo/${id}`)
+         .toPromise();
+   }
 }
