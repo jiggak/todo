@@ -21,6 +21,18 @@ module.exports = {
          {
             test: /\.html$/,
             loader: 'html'
+         },
+         {
+            test: /\.less$/,
+            loader: 'style!css!less'
+         },
+         {
+            test: /\.(woff|woff2|svg|ttf)$/,
+            loader: 'url?mimetype=application/font-woff'
+         },
+         {
+            test: /\.eot$/,
+            loader: 'file'
          }
       ]
    },
