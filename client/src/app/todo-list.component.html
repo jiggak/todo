@@ -1,0 +1,7 @@
+<div class="todo-list">
+   <div class="todo-item" *ngFor="let todo of todos$ | async">
+      <span>{{todo.created}}</span>
+      <span>{{todo.message}}</span>
+      <button (click)="delete(todo.id)">X</button>
+   </div>
+</div>

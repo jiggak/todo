@@ -1,12 +1,14 @@
-<div *ngFor="let todo of todos$ | async">
-   <span>{{todo.created}}</span>
-   <span>{{todo.message}}</span>
-   <button class="btn btn-danger" (click)="delete(todo.id)">X</button>
-</div>
-
-<form class="form-inline">
-   <div class="form-group">
-      <input class="form-control" #todoMessage type="text" placeholder="Is there something you need to do?">
+<div class="container">
+   <div class="row">
+      <todo-list #list></todo-list>
    </div>
-   <button class="btn btn-primary" (click)="save(todoMessage.value)">Save</button>
-</form>
+
+   <div class="row">
+      <form class="form-inline">
+         <div class="form-group">
+            <input class="form-control" #todoMessage type="text" placeholder="Is there something you need to do?">
+         </div>
+         <button class="btn btn-primary" (click)="list.save(todoMessage.value)">Save</button>
+      </form>
+   </div>
+</div>

@@ -7,5 +7,3 @@ import '@angular/http';
 
 // RxJS
 import 'rxjs';
-
-import 'bootstrap/less/bootstrap.less';

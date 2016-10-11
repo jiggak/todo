@@ -13,7 +13,6 @@ export class TodoService {
    }
 
    create(todo: Todo): Promise<any> {
-      console.log(todo);
       return this.http.post('/api/todo', todo)
          .toPromise();
    }
